@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Majeed | Software Engineering Student &amp; Web3 Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#EADFC8;--glass:rgba(244,236,220,.5);--ivory:#F4ECDC;--navy:#0F1B33;--ter:#A8461F;--ter2:#E08A5F;--muted:#4F576A;--tan:#D8CBB0;--ring:rgba(255,255,255,.6);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--navy);font:400 1rem/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,"Times New Roman",serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ter);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--navy);color:var(--ivory);padding:10px 16px;border-radius:8px;z-index:50}.skip:focus{top:12px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ivory);z-index:10;transition:.3s}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(460px circle at 10% 12%,rgba(168,70,31,.3),transparent 70%),radial-gradient(520px circle at 92% 38%,rgba(224,138,95,.42),transparent 70%),radial-gradient(560px circle at 25% 92%,rgba(255,255,255,.6),transparent 70%);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(-2%,2%,0) scale(1.05)}}
+body.scrolled::before,body.scrolled nav{background:rgba(244,236,220,.5);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--ivory);border-bottom:1px solid var(--tan);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 5vw;transition:.3s}
+.logo{font:700 1.25rem Fraunces,Georgia,serif;color:var(--ter);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+nav ul a{display:block;padding:6px 12px;border-radius:20px;text-decoration:none;font-weight:500;font-size:.92rem;white-space:nowrap;transition:.2s}
+nav ul a:hover{background:rgba(168,70,31,.1);color:var(--ter)}
+section,.wrap{max-width:1040px;margin:0 auto;padding:84px 5vw}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ter);margin:0 0 10px}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700}
+.lede{color:var(--muted);max-width:640px;margin:14px 0 36px}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid var(--ring);border-radius:20px;box-shadow:0 8px 32px rgba(15,27,51,.09),inset 0 1px 0 rgba(255,255,255,.65);transition:transform .3s,box-shadow .3s}
+.lift:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,27,51,.14),inset 0 1px 0 rgba(255,255,255,.7)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:30px;font:600 .95rem Inter,sans-serif;text-decoration:none;border:1.5px solid var(--ter);cursor:pointer;transition:.2s}
+.btn.pri{background:var(--ter);color:var(--ivory)}.btn.pri:hover{background:var(--navy);border-color:var(--navy)}
+.btn.sec{background:transparent;color:var(--ter)}.btn.sec:hover{background:var(--ter);color:var(--ivory)}
+.off{display:inline-flex;padding:8px 14px;border:1.5px dashed var(--muted);border-radius:30px;font-size:.82rem;font-weight:500;color:var(--muted);cursor:not-allowed}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;min-height:calc(100vh - 70px);padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4rem);font-weight:700;letter-spacing:-.02em;margin:6px 0 20px}
+.hero h1 em{color:var(--ter);font-style:italic}
+.hero p.sub{font-size:1.08rem;color:var(--muted);max-width:540px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+.social a,.social span{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--ring);background:var(--glass);transition:.2s}
+.social a:hover{background:var(--ter);color:var(--ivory);transform:translateY(-2px)}
+.social span{border:1.5px dashed var(--muted);color:var(--muted);cursor:not-allowed;background:transparent}
+.social svg{width:20px;height:20px;fill:currentColor}
+.portrait{position:relative;justify-self:center;width:min(100%,340px);aspect-ratio:4/5}
+.portrait::before{content:"";position:absolute;inset:-14px;border:1.5px solid var(--ter);border-radius:150px 150px 28px 28px;opacity:.35;transform:rotate(3deg)}
+.pframe{position:absolute;inset:0;border-radius:140px 140px 24px 24px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(160deg,var(--ivory),var(--tan));box-shadow:0 24px 60px rgba(15,27,51,.18);border:1px solid var(--ring)}
+.pframe img{width:100%;height:100%;object-fit:cover}
+.pframe .ph{text-align:center;color:var(--ter)}.pframe .ph b{display:block;font:700 6rem/1 Fraunces,serif}.pframe .ph small{font-size:.78rem;color:var(--muted)}
+.badge{position:absolute;right:-10px;bottom:28px;padding:10px 16px;font-size:.82rem;font-weight:600;border-radius:14px}
+.rise{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes rise{to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:36px}
+.about p{color:var(--muted);margin:0 0 16px}
+.facts{display:grid;gap:14px}
+.fact{padding:18px 22px}.fact h3{font:600 .76rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ter);margin-bottom:4px}.fact p{margin:0;color:var(--navy)}
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.focus div{padding:20px}.focus b{display:block;font:700 1.05rem Fraunces,serif;margin-bottom:4px}.focus span{font-size:.9rem;color:var(--muted)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:26px 20px;text-align:center}.stat b{display:block;font:700 2.6rem/1 Fraunces,serif;color:var(--ter)}.stat span{display:block;margin-top:8px;font-size:.88rem;color:var(--muted)}.stat small{font-size:.72rem;color:var(--muted);opacity:.8}
+/* skills */
+.sk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.sk{padding:26px}.sk h3{font-size:1.15rem;margin-bottom:16px}
+.sk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sk li{display:flex;align-items:center;gap:10px;font-size:.92rem;font-weight:500;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.5);transition:.2s}
+.sk li:hover{background:rgba(255,255,255,.75);transform:translateY(-2px)}
+.ic{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--navy);color:var(--ter2);font:700 .72rem Inter,sans-serif}
+.empty{grid-column:1/-1;padding:16px;border:1.5px dashed var(--muted);border-radius:12px;color:var(--muted);font-size:.88rem;text-align:center}
+/* projects */
+.pj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.pj{overflow:hidden;display:flex;flex-direction:column}
+.pj.feat{grid-column:1/-1;flex-direction:row}
+.thumb{position:relative;min-height:190px;flex:0 0 42%;display:grid;place-items:center;background:linear-gradient(140deg,var(--navy),#23365f);overflow:hidden}
+.pj:not(.feat) .thumb{flex:none}
+.thumb::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--ter2),transparent 65%);opacity:.55;right:-60px;top:-80px}
+.thumb.alt{background:linear-gradient(140deg,var(--ter),#6e2c12)}.thumb.alt2{background:linear-gradient(140deg,#5b6478,var(--navy))}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb .mono{position:relative;font:700 3.4rem Fraunces,serif;color:var(--ivory);opacity:.92}
+.thumb .flag{position:absolute;left:14px;top:14px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--ter2);color:var(--navy);padding:4px 10px;border-radius:20px}
+.pbody{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}.pbody h3{font-size:1.4rem}.pbody p{margin:0;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:.78rem;font-weight:500;padding:3px 11px;border-radius:20px;background:rgba(168,70,31,.1);color:var(--ter);border:1px solid rgba(168,70,31,.25)}.tag.ph{background:transparent;border-style:dashed;color:var(--muted)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.links .btn{padding:8px 18px;font-size:.85rem}
+/* timeline */
+.tl{position:relative;display:grid;gap:18px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--ter),var(--tan))}
+.tl article{position:relative;padding:22px 26px}
+.tl article::before{content:"";position:absolute;left:-32px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--ter);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--ter)}
+.tl h3{font-size:1.2rem;margin:2px 0 6px}.tl p{margin:0;color:var(--muted);font-size:.95rem}
+.tl .kind{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ter)}
+/* contact */
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
+.cinfo{display:grid;gap:14px;align-content:start}
+.cc{padding:20px 22px;display:flex;gap:14px;align-items:center;text-decoration:none}
+.cc .ic{width:42px;height:42px;font-size:1.1rem;background:var(--ter);color:var(--ivory);border-radius:12px}
+.cc small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ter);font-weight:600}.cc span{word-break:break-word;font-weight:500}
+form{padding:30px;display:grid;gap:18px}
+.fld label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;font:inherit;color:var(--navy);background:rgba(255,255,255,.65);border:1.5px solid var(--tan);border-radius:12px;padding:12px 14px;transition:.2s}
+.fld textarea{min-height:130px;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--ter);box-shadow:0 0 0 4px rgba(168,70,31,.15)}
+.fld.bad input,.fld.bad textarea{border-color:#a3261a}
+.err{display:none;color:#a3261a;font-size:.82rem;margin-top:5px}.fld.bad .err{display:block}
+.status{display:none;padding:14px 16px;border-radius:12px;font-size:.92rem}
+.status.ok{display:block;background:rgba(46,110,70,.12);border:1px solid rgba(46,110,70,.4);color:#1f5a38}
+.status.fail{display:block;background:rgba(163,38,26,.1);border:1px solid rgba(163,38,26,.35);color:#8a2016}
+.fnote{font-size:.8rem;color:var(--muted);margin:0}
+.btn[disabled]{opacity:.65;cursor:wait}
+/* footer */
+footer{background:var(--ivory);color:var(--navy);border-top:1px solid var(--tan)}
+.fgrid{max-width:1040px;margin:0 auto;padding:52px 5vw 28px;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
+footer nav{all:unset}footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;padding:0}
+footer a{text-decoration:none;opacity:.85}footer a:hover{opacity:1;color:var(--ter)}
+.copy{max-width:1040px;margin:0 auto;padding:18px 5vw 30px;border-top:1px solid var(--tan);font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:860px){.hero,.about,.contact{grid-template-columns:1fr}.hero{min-height:0}.portrait{order:-1;width:min(70%,260px)}.stats{grid-template-columns:repeat(2,1fr)}.sk-grid,.pj-grid{grid-template-columns:1fr}.pj.feat{flex-direction:column}.thumb{flex:none}.focus{grid-template-columns:1fr}section,.wrap{padding-top:60px;padding-bottom:60px}.badge{right:0}}
+@media (max-width:520px){nav{padding:10px 4vw}.logo{display:none}.stats{gap:10px}.stat b{font-size:2.1rem}form{padding:22px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise,.rv{opacity:1;transform:none}}
+</style>
+<noscript><style>.rise,.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<nav aria-label="Main"><a class="logo" href="#home">Majeed</a>
+<ul id="nav"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#stats">Stats</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<main>
+<header class="wrap hero" id="home">
+<div>
+<p class="eyebrow rise" style="--d:.05s">Software Engineering Student · Developer · Web3 Enthusiast</p>
+<h1 class="rise" style="--d:.15s">Building thoughtful software for the <em>decentralised</em> web.</h1>
+<p class="sub rise" style="--d:.25s">I’m Majeed, a 400-level Software Engineering student who writes code, manages crypto and Web3 communities, and creates content that makes complex ideas feel simple.</p>
+<div class="cta rise" style="--d:.35s"><a class="btn pri" href="#projects">View My Projects</a><a class="btn sec" href="#contact">Let’s Connect</a></div>
+<div class="social rise" style="--d:.45s" data-social aria-label="Social links"></div>
+</div>
+<div class="portrait rise" style="--d:.3s"><div class="pframe" id="pframe"></div><div class="badge glass">Kano, Nigeria</div></div>
+</header>
+
+<section id="about"><div class="rv">
+<p class="eyebrow">About</p><h2>Engineer by training, community builder by practice.</h2>
+<p class="lede"></p>
+<div class="about">
+<div><p>I’m studying Software Engineering at Bayero University Kano, with a strong interest in software development and digital innovation.</p><p>Outside the classroom I work in crypto and Web3 community management and content production, which keeps me close to real users and to how new technology is actually adopted.</p></div>
+<div class="facts">
+<div class="fact glass"><h3>Education</h3><p>B.Sc. Software Engineering (400 Level), Bayero University Kano</p></div>
+<div class="fact glass"><h3>Interests</h3><p>Coding, Web3 &amp; Crypto, Community Building, Content Creation</p></div>
+<div class="fact glass"><h3>Career goal</h3><p>Become a skilled software engineer and build impactful digital solutions.</p></div>
+</div></div>
+<div class="focus">
+<div class="glass lift"><b>Software engineering</b><span>Building useful, well-structured digital products.</span></div>
+<div class="glass lift"><b>Web3 &amp; decentralised tech</b><span>Understanding and growing crypto ecosystems.</span></div>
+<div class="glass lift"><b>Community &amp; content</b><span>Communication that connects people to products.</span></div>
+</div></div></section>
+
+<section id="stats"><div class="rv">
+<p class="eyebrow">At a glance</p><h2>The numbers, kept honest.</h2>
+<p class="lede">Figures marked “edit” are placeholders. Update them in the <code>STATS</code> list at the bottom of the page source.</p>
+<div class="stats" id="statsGrid"></div></div></section>
+
+<section id="skills"><div class="rv">
+<p class="eyebrow">Skills</p><h2>Tools of the trade.</h2>
+<p class="lede">Grouped by how I use them. Empty groups are waiting for confirmed entries.</p>
+<div class="sk-grid" id="skGrid"></div></div></section>
+
+<section id="projects"><div class="rv">
+<p class="eyebrow">Projects</p><h2>Selected work.</h2>
+<p class="lede">Dashed buttons mark links and screenshots still to be added.</p>
+<div class="pj-grid" id="pjGrid"><div class="empty">Loading projects…</div></div></div></section>
+
+<section id="experience"><div class="rv">
+<p class="eyebrow">Experience &amp; community</p><h2>Where I contribute.</h2>
+<p class="lede">Community, campaign and content involvement. Dates and titles can be added as they’re confirmed.</p>
+<div class="tl" id="tl"></div></div></section>
+
+<section id="contact"><div class="rv">
+<p class="eyebrow">Contact</p><h2>Let’s build something together.</h2>
+<p class="lede">Open to collaborations, internships and conversations about software and Web3.</p>
+<div class="contact">
+<div class="cinfo">
+<a class="cc glass lift" href="mailto:ibramajeed26@gmail.com"><span class="ic" aria-hidden="true">@</span><div><small>Email</small><span>ibramajeed26@gmail.com</span></div></a>
+<a class="cc glass lift" href="tel:+2348105886539"><span class="ic" aria-hidden="true">☎</span><div><small>Phone</small><span>+234 810 588 6539</span></div></a>
+<div class="social" data-social aria-label="Social links"></div>
+</div>
+<form id="cf" class="glass" novalidate>
+<div class="fld"><label for="n">Name</label><input id="n" name="name" autocomplete="name" required><div class="err" id="n-e">Please enter your name.</div></div>
+<div class="fld"><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required><div class="err" id="e-e">Please enter a valid email address.</div></div>
+<div class="fld"><label for="m">Message</label><textarea id="m" name="message" required></textarea><div class="err" id="m-e">Please write at least 10 characters.</div></div>
+<button class="btn pri" type="submit" id="sb">Send message</button>
+<p class="fnote">Sending opens your email app with this message ready to send to me.</p>
+<div class="status" id="st" role="status" aria-live="polite"></div>
+</form></div></div></section>
+</main>
+
+<footer>
+<div class="fgrid"><div><div class="serif" style="font-size:1.4rem;color:var(--ter)">Majeed</div><small style="opacity:.75">Software Engineering Student · Developer · Web3</small></div>
+<nav aria-label="Footer"><ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<div class="social" data-social aria-label="Social links"></div></div>
+<div class="copy"><span>© 2026 Majeed. All rights reserved.</span><a href="#home">Back to top ↑</a></div>
+</footer>
+
+<script>
+/* ===== Editable content ===== */
+const EMAIL="ibramajeed26@gmail.com";
+const PROFILE_IMG=""; /* paste an image URL or data: URI to show your photo */
+const SOCIAL=[{k:"GitHub",url:"https://github.com/carelofy",d:"M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"},
+{k:"LinkedIn",url:"",d:"M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"},
+{k:"X",url:"https://x.com/metafx13",d:"M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.2 22H2l7.7-8.8L1.5 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"}];
+const SKILLS=[
+{t:"Development",items:[["H5","HTML"],["C3","CSS"],["JS","JavaScript"],["TS","TypeScript"],["Re","React"],["Nx","Next.js"],["TW","Tailwind CSS"]]},
+{t:"Backend & Database",items:[["Sb","Supabase"],["PG","PostgreSQL"],["Au","Authentication & API integration"],["Ps","Paystack integration"]]},
+{t:"Tools",items:[["VS","Visual Studio Code"],["Git","Git"]]},
+{t:"Web3 & Community",items:[["W3","Crypto & Web3"],["CM","Community Management"],["AM","AMA Hosting"],["TG","Telegram Admin"],["CC","Content Creation"],["Ar","Article Writing"]]}];
+const PROJECTS=[
+{feat:1,flag:"Featured",title:"Student Crowdfunding Platform",img:"",mono:"SC",
+desc:"A crowdfunding platform concept for students at Bayero University Kano, connecting students who need support with donors who want to help.",tags:[],view:"",code:""},
+{title:"Abinci",img:"",mono:"Ab",cls:"alt",desc:"A global food and necessity platform where people buy, sell and get items delivered. My contribution: branding and content.",tags:["Branding","Content"],view:"",code:""},
+{title:"This Portfolio",img:"",mono:"</>",cls:"alt2",desc:"My personal portfolio, designed and built from scratch as a single, responsive page.",tags:["HTML","CSS","JavaScript"],view:"",code:""}];
+const EXPERIENCE=[
+{kind:"Full-time role",title:"BingX",txt:"Worked with BingX in a full-time role. The contract has since ended."},
+{kind:"Social media & content",title:"CoinWaft",txt:"Social media management, content creation and article writing."},
+{kind:"AMA hosting",title:"AILayer",txt:"Hosted roughly 150–200 AMAs for the AILayer community."},
+{kind:"Freelance",title:"Web3 Community & Marketing Consultant",txt:"Web3 community and marketing activities for three meme-coin projects: BA Coin, Water and Coffee."}];
+const STATS=[
+{v:()=>PROJECTS.length,l:"Projects showcased"},
+{v:()=>SKILLS.reduce((a,s)=>a+s.items.length,0),l:"Skills & technologies listed"},
+{v:()=>EXPERIENCE.length,l:"Community & content roles"},
+{v:"—",l:"Years coding",edit:1}];
+/* ===== Components ===== */
+const $=(s,r=document)=>r.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ext=(u,t,c="btn sec")=>u?`<a class="${c}" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`:`<span class="off" title="Add this link in the PROJECTS list">${t} · not added yet</span>`;
+const social=()=>SOCIAL.map(s=>s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" aria-label="${s.k}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${s.d}"/></svg></a>`:`<span role="img" aria-label="${s.k} link not added yet" title="${s.k}: add your link in SOCIAL"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${s.d}"/></svg></span>`).join("");
+const projectCard=p=>`<article class="pj glass lift ${p.feat?"feat":""} rv"><div class="thumb ${p.cls||""}">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.title)} screenshot" onerror="this.remove()">`:""}<span class="mono" aria-hidden="true">${esc(p.mono)}</span>${p.flag?`<span class="flag">${p.flag}</span>`:""}</div><div class="pbody"><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><div class="tags">${p.tags.length?p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(""):`<span class="tag ph">Tech stack: add yours</span>`}</div><div class="links">${ext(p.view,"View project","btn pri")}${ext(p.code,"Source code")}</div></div></article>`;
+function render(){
+ document.querySelectorAll("[data-social]").forEach(e=>e.innerHTML=social());
+ const pf=$("#pframe");pf.innerHTML=PROFILE_IMG?`<img src="${esc(PROFILE_IMG)}" alt="Portrait of Majeed">`:`<div class="ph"><b>M</b><small>Add your photo</small></div>`;
+ const im=pf.querySelector("img");if(im)im.onerror=()=>{pf.innerHTML=`<div class="ph"><b>M</b><small>Photo failed to load</small></div>`};
+ $("#statsGrid").innerHTML=STATS.map(s=>`<div class="stat glass lift"><b>${typeof s.v==="function"?s.v():s.v}</b><span>${s.l}</span>${s.edit?"<small>edit in STATS</small>":""}</div>`).join("");
+ $("#skGrid").innerHTML=SKILLS.map(g=>`<div class="sk glass lift"><h3>${esc(g.t)}</h3><ul>${g.items.length?g.items.map(i=>`<li><span class="ic" aria-hidden="true">${i[0]}</span>${esc(i[1])}</li>`).join(""):`<li class="empty">Nothing confirmed yet. Add what you’ve actually used.</li>`}</ul></div>`).join("");
+ $("#pjGrid").innerHTML=PROJECTS.length?PROJECTS.map(projectCard).join(""):`<div class="empty">No projects yet. Add one to the PROJECTS list.</div>`;
+ $("#tl").innerHTML=EXPERIENCE.length?EXPERIENCE.map(e=>`<article class="glass lift rv"><span class="kind">${esc(e.kind)}</span><h3>${esc(e.title)}</h3><p>${esc(e.txt)}</p></article>`).join(""):`<div class="empty">Nothing added yet.</div>`;
+}
+render();
+/* ===== Behaviour ===== */
+const onScroll=()=>document.body.classList.toggle("scrolled",scrollY>10);addEventListener("scroll",onScroll,{passive:true});onScroll();
+const rv=document.querySelectorAll(".rv");
+if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});rv.forEach(e=>io.observe(e))}else rv.forEach(e=>e.classList.add("in"));
+/* Contact form: validates, then opens the visitor's email app with the message prefilled */
+const f=$("#cf"),st=$("#st"),sb=$("#sb");
+const rules={n:v=>v.trim().length>1,e:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),m:v=>v.trim().length>=10};
+const check=id=>{const el=$("#"+id),ok=rules[id](el.value);el.closest(".fld").classList.toggle("bad",!ok);el.setAttribute("aria-invalid",!ok);el.setAttribute("aria-describedby",id+"-e");return ok};
+["n","e","m"].forEach(id=>$("#"+id).addEventListener("blur",()=>check(id)));
+f.addEventListener("submit",ev=>{ev.preventDefault();st.className="status";
+ const oks=["n","e","m"].map(check);if(oks.includes(false)){$("#"+["n","e","m"][oks.indexOf(false)]).focus();return}
+ sb.disabled=true;sb.textContent="Opening your email app…";
+ try{const b=`${$("#m").value.trim()}\n\n— ${$("#n").value.trim()} (${$("#e").value.trim()})`;
+  location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("Portfolio message from "+$("#n").value.trim())}&body=${encodeURIComponent(b)}`;
+  setTimeout(()=>{st.className="status ok";st.textContent=`Your email app should now be open. Press send there to finish. If nothing opened, write to me directly at ${EMAIL}.`;sb.disabled=false;sb.textContent="Send message";f.reset()},900);
+ }catch(x){st.className="status fail";st.textContent=`Something went wrong. Please email me directly at ${EMAIL}.`;sb.disabled=false;sb.textContent="Send message"}});
+</script>
+</body>
+</html>
